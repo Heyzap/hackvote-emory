@@ -1,0 +1,17 @@
+<h1>Create a HackDay!</h1>
+
+<%= form_for(@hackday) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :start %>
+  <%= f.datetime_select :start, default: DateTime.now %>
+  <br>
+
+  <%= f.label :end %>
+  <%= f.datetime_select :end, default: DateTime.now + 1 %>
+  <br>
+
+  <%= f.submit "Schedule a HackDay" %>
+<% end %>
