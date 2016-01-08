@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 3.times do |d|
-  @hackday = Hackday.create(date: DateTime.now, name: "#{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb}")
+  @hackday = Hackday.create(start: DateTime.now, end: DateTime.now + 1, name: "#{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb}")
   10.times do |n|
     name = "#{Faker::Hacker.adjective} #{Faker::Hacker.abbreviation} #{Faker::Hacker.noun}"
     @project = Project.create!(name: name)
