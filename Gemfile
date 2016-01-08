@@ -43,3 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'faker', '1.6.1'

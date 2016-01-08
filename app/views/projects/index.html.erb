@@ -3,7 +3,7 @@
 <ol class="projects">
   <% @projects.each do |project| %>
     <li>
-      <%= lint_to project.name, project %>
+      <%= link_to project.name, project %>
     </li>
   <% end %>
 </ol>
