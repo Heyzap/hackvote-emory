@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108183042) do
+ActiveRecord::Schema.define(version: 20160108183759) do
 
   create_table "hackdays", force: :cascade do |t|
     t.datetime "date"
@@ -28,5 +28,14 @@ ActiveRecord::Schema.define(version: 20160108183042) do
   end
 
   add_index "projects", ["hackday_id"], name: "index_projects_on_hackday_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "users", ["project_id"], name: "index_users_on_project_id"
 
 end

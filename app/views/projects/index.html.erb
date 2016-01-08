@@ -1,0 +1,9 @@
+<h1>All Projects</h2>
+
+<ol class="projects">
+  <% @projects.each do |project| %>
+    <li>
+      <%= lint_to project.name, project %>
+    </li>
+  <% end %>
+</ol>
