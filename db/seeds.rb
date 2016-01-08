@@ -6,13 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
-20.times do |n|
-  name = "#{Faker::Hacker.adjective} #{Faker::Hacker.abbreviation} #{Faker::Hacker.noun}"
-  @project = Project.create!(name: name)
-  5.times do |i|
-    @vote = @project.votes.create!()
-    @vote.user = User.create!(username: Faker::Internet.user_name)
-    @vote.save
+3.times do |d|
+  @hackday = Hackday.create(date: DateTime.now, name: "#{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb}")
+  10.times do |n|
+    name = "#{Faker::Hacker.adjective} #{Faker::Hacker.abbreviation} #{Faker::Hacker.noun}"
+    @project = Project.create!(name: name)
+    5.times do |i|
+      @vote = @project.votes.create!()
+      @vote.user = User.create!(username: Faker::Internet.user_name)
+      @vote.save
+    end
   end
 end
-

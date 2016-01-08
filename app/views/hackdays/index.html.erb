@@ -1,1 +1,9 @@
-
+<h1>HackDays!</h1>
+<% @hackdays.each do |hackday| %>
+  <h1>
+    <%= link_to hackday.name, hackday %>
+  </h1>
+  <h2>
+    <%= hackday.date %>
+  </h2>
+<% end %>
