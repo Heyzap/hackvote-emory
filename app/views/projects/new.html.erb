@@ -1,0 +1,9 @@
+<h1>Create a new HackDay Project!</h1>
+
+<%= form_for(@project) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.submit "Create this Project" %>
+<% end %>

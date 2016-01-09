@@ -6,3 +6,4 @@
     <li><%= vote.user.username %></li>
   <% end %>
 </ul>
+<%= link_to "vote for this project", [:new, @project, :vote] %>

@@ -2,3 +2,5 @@
   <%= @hackday.name %>
 </h1>
 <%= @hackday.start %>↝<%= @hackday.end %>
+
+<%= link_to "add a project", [:new, @hackday, :project] %>
