@@ -13,7 +13,7 @@
     @project = Project.create!(name: name)
     5.times do |i|
       @vote = @project.votes.create!()
-      @vote.user = User.create!(username: Faker::Internet.user_name)
+      @vote.user = User.create!(username: Faker::Internet.user_name, password: Faker::Internet.password)
       @vote.save
     end
   end
