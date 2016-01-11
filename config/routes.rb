@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   end
   resources :hackdays do
     resources :projects, shallow: true
+    member do
+      put :close
+    end
   end
 end

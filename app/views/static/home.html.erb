@@ -1,4 +1,9 @@
 <h1>Emory's Hackday Tracker</h1>
 
-<%= link_to 'Sign Up', signup_path %>
-<%= link_to 'Sign In', signin_path %>
+<% if logged_in? %>
+  <%= link_to 'Hackdays', :hackdays %>
+  <%= link_to 'Projects', :projects %>
+<% else %>
+  <%= link_to 'Sign Up', signup_path %>
+  <%= link_to 'Sign In', signin_path %>
+<% end %>

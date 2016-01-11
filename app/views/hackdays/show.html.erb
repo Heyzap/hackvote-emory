@@ -1,6 +1,27 @@
 <h1>
   <%= @hackday.name %>
 </h1>
-<%= @hackday.start %>↝<%= @hackday.end %>
 
-<%= link_to "add a project", [:new, @hackday, :project] %>
+<h3>
+  <%= @hackday.start %>↝<%= @hackday.end %>
+</h3>
+
+<% if @hackday.closed? %>
+  <h4>closed</h4>
+<% end %>
+
+<ul>
+  <% @hackday.projects.sort_by {|project| project.votes.count}.reverse.each_with_index do |project, index| %>
+    <li>
+    <%= link_to project.name, project %> (<%= project.votes.count %> votes)
+    <% if index == 0 && @hackday.closed? %>
+      <strong>Winner!</strong>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<% unless @hackday.closed? %>
+  <%= link_to "add a project", [:new, @hackday, :project] %>
+  <%= link_to "close this hackday", close_hackday_path, method: :put %>
+<% end %>

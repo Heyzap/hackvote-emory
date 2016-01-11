@@ -10,10 +10,9 @@
   @hackday = Hackday.create(start: DateTime.now, end: DateTime.now + 1, name: "#{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb} #{Faker::Hacker.ingverb}")
   10.times do |n|
     name = "#{Faker::Hacker.adjective} #{Faker::Hacker.abbreviation} #{Faker::Hacker.noun}"
-    @project = Project.create!(name: name)
-    5.times do |i|
-      @vote = @project.votes.create!()
-      @vote.user = User.create!(username: Faker::Internet.user_name, password: Faker::Internet.password)
+    @project = @hackday.projects.create!(name: name)
+    3.times do |i|
+      @vote = @project.votes.create!(user: User.create!(username: Faker::Internet.user_name, password: Faker::Internet.password))
       @vote.save
     end
   end

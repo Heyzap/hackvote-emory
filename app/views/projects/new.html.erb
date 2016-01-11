@@ -5,5 +5,7 @@
   <%= f.text_field :name %>
   <br>
 
+  <%= f.hidden_field :hackday_id, value: params[:hackday_id] %>
+
   <%= f.submit "Create this Project" %>
 <% end %>

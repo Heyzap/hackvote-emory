@@ -20,6 +20,13 @@ class HackdaysController < ApplicationController
     end
   end
 
+  def close
+    @hackday = Hackday.find(params[:id])
+    @hackday.closed = true
+    @hackday.save
+    redirect_to @hackday
+  end
+
   private
 
   def hackday_params
