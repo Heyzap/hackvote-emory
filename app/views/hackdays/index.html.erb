@@ -1,10 +1,11 @@
 <h1>HackDays!</h1>
-<% @hackdays.each do |hackday| %>
+<% @hackdays.sort_by {|hackday| hackday.start}.reverse.each do |hackday| %>
   <h1>
     <%= link_to hackday.name, hackday %>
   </h1>
   <%= hackday.start %>↝<%= hackday.end %>
 <% end %>
 
+<br>
 <br>
 <%= link_to 'create a hackday', new_hackday_path %>
